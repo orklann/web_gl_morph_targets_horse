@@ -81,10 +81,9 @@ animate(num time) {
   render();
 }
 
-const radius = 600,
-    duration = 500,
-    keyframes = 10,
-    interpolation = duration / keyframes;
+const radius = 600, duration = 500;
+var keyframes = 0;
+var interpolation = duration / keyframes;
 
 var theta = 0.0, lastKeyframe = 0, currentKeyframe = 0;
 
@@ -98,7 +97,8 @@ render() {
 
   if (mesh != null) {
     // Alternate morph targets
-
+    keyframes = mesh.geometry.morphTargets.length;
+    interpolation = duration / keyframes;
     var time = new DateTime.now().millisecondsSinceEpoch % duration;
 
     var keyframe = (time / interpolation).floor().toInt();
