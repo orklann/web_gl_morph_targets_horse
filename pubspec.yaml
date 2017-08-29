@@ -1,0 +1,14 @@
+name: dart_webgl
+version: 0.0.1-dev
+description: Samples for Dart
+homepage:
+environment:
+  sdk: '>=0.6.17'
+dependencies:
+  browser: any
+  dart_to_js_script_rewriter: ^1.0.1
+  vector_math: any
+  three:
+    path: /Users/aaron/projects/three.dart
+transformers:
+- dart_to_js_script_rewriter
